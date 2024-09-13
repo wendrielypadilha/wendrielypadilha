@@ -1,0 +1,19 @@
+using System;
+const decimal primeironivelcomissao = 2000;
+const decimal porcentagemdoprimeironivel = 0.5m;
+const decimal porcentagemaposprimeironivel = 0.1m;
+
+decimal salariofixo = 3000;
+decimal totaldevendas = 1500;
+
+decimal comissao = 0;
+ if (totaldevendas > primeironivelcomissao)
+{
+   comissao = (totaldevendas - primeironivelcomissao) * porcentagemaposprimeironivel;     
+   comissao += (primeironivelcomissao * porcentagemdoprimeironivel);
+}
+ else
+{
+   comissao = totaldevendas * porcentagemdoprimeironivel;    
+}
+Console.WriteLine($"O salário total é: {comissao + salariofixo}");
