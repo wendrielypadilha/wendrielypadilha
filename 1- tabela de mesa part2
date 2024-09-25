@@ -1,28 +1,37 @@
-                using System;
+           
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace Teste_mesa1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int [] v = new int[6];
+            int a = 2;
+            Console.WriteLine();
+            while (a < 6)
+            { 
+                v[a] = 10 * a;
+                a +=  1;
+            }
+            // Exibe os valores do vetor
+            foreach (var valor in v)
             {
-                static void Main()
-                {
-                    int[] v = new int[6]; 
-                    int a = 2;
+                Console.WriteLine(valor);
+                Console.WriteLine("Valores dos vetotores são: ");
 
-                    while (a < 6) 
-                    {
-                        v[a] = 10 * a;
-                        a++;
-                    }
 
-                    // Exibe os valores do vetor
-                    foreach (var valor in v)
-                    {
-                        Console.WriteLine(valor);
-                    }
-                }
+                Console.ReadLine();
             }
         }
-      
-
+    }
+}
 
 
 
