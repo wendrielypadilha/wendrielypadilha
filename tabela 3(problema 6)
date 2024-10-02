@@ -1,0 +1,47 @@
+using System;
+
+namespace CalculoRendimentos
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Valores dos investimentos
+            double investimento1 = 1000;
+            double investimento2 = 5500;
+            double investimento3 = 12000;
+
+            // Taxas de juros (em decimal)
+            double taxa1 = 0.03;
+            double taxa2 = 0.0248;
+            double taxa3 = 0.02;
+
+            // Período em meses
+            double periodoMeses = 8 + 10 / 30.0; // Convertendo dias para meses
+
+            // Taxa de juros mensal
+            double taxaMensal1 = taxa1 / 12;
+            double taxaMensal2 = taxa2 / 12;
+            double taxaMensal3 = taxa3 / 12;
+
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine("| Mês | Investimento 1 | Investimento 2 | Investimento 3 |");
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+
+
+            double valorAtual1 = investimento1, valorAtual2 = investimento2, valorAtual3 = investimento3;
+            for (int mes = 1; mes <= periodoMeses; mes++)
+            {
+                valorAtual1 *= (1 + taxaMensal1);
+                valorAtual2 *= (1 + taxaMensal2);
+                valorAtual3 *= (1 + taxaMensal3);
+
+                Console.WriteLine($"| {mes}  | {valorAtual1:C}     | {valorAtual2:C}     | {valorAtual3:C}     |");
+            }
+
+            Console.WriteLine("--------------------------------------------------------------------------------");
+
+            Console.ReadLine();
+        }
+    }
+}
